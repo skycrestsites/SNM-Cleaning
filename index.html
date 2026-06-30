@@ -780,16 +780,17 @@
       }
     });
 
-    // Scroll-aware header
+    // Hide on scroll-down, reveal on scroll-up
     const hdr = document.getElementById('site-header');
+    hdr.style.transition = 'transform 0.35s ease, box-shadow 0.3s ease';
+    let lastScrollY = 0;
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 30) {
-        hdr.classList.add('shadow-lg');
-        hdr.classList.remove('shadow-sm');
-      } else {
-        hdr.classList.remove('shadow-lg');
-        hdr.classList.add('shadow-sm');
-      }
+      const cur = window.scrollY;
+      if (cur > 30) { hdr.classList.add('shadow-lg'); hdr.classList.remove('shadow-sm'); }
+      else { hdr.classList.remove('shadow-lg'); hdr.classList.add('shadow-sm'); }
+      if (cur > lastScrollY && cur > 80) { hdr.style.transform = 'translateY(-100%)'; }
+      else { hdr.style.transform = 'translateY(0)'; }
+      lastScrollY = cur;
     });
   })();
 </script>
