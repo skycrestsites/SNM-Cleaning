@@ -22,6 +22,7 @@
   <header id="site-header" class="flex items-center justify-between px-6 md:px-12 py-4 sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
     <a href="/" class="flex items-center gap-3 shrink-0"><img src="/assets/images/logo.png" alt="SNM Cleaning LLC" class="h-14 w-auto" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/><span class="hidden text-xl font-serif italic text-primary tracking-tight">SNM Cleaning</span></a>
     <nav class="hidden md:flex items-center gap-10">
+      <a class="text-[11px] uppercase tracking-[0.2em] font-medium text-slate-700 hover:text-accent transition-colors" href="/">Home</a>
       <div class="relative" id="services-dd"><button id="services-btn" class="flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] font-bold text-accent">Services <span class="material-symbols-outlined text-base leading-none transition-transform duration-200" id="services-chevron">expand_more</span></button>
         <div id="services-menu" class="hidden absolute top-full left-0 py-3 min-w-[230px] bg-white border border-slate-200 shadow-xl flex-col z-50">
           <a class="px-6 py-2.5 text-[11px] uppercase tracking-[0.15em] font-medium text-slate-700 hover:bg-background-light hover:text-accent transition-colors" href="/services/residential-cleaning/">Residential Cleaning</a>
@@ -43,6 +44,8 @@
       <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-primary" aria-label="Toggle menu"><span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span></button>
     </div>
     <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl py-6 px-6 flex-col gap-1 z-50" style="display:none;">
+      <a class="block px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] font-medium text-slate-700 hover:text-accent hover:bg-background-light transition-colors" href="/">Home</a>
+      <div class="border-t border-slate-100 my-1"></div>
       <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent px-2 pt-2 pb-3">Services</p>
       <a class="block px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] font-medium text-slate-700 hover:text-accent hover:bg-background-light transition-colors" href="/services/residential-cleaning/">Residential Cleaning</a>
       <a class="block px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] font-medium text-slate-700 hover:text-accent hover:bg-background-light transition-colors" href="/services/deep-cleaning/">Deep Cleaning</a>
