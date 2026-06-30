@@ -130,7 +130,7 @@
       <img
         src="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-321382/flowpublicid-qgGLY5se1ous/bb359688-172a-4a78-ad05-a237e45b4120-n1lv730BNUqTbrRofIcfrkl9ZFo0K0u1Pa8g8xzCBJp37Xrkg3ZH9FlbPEBODCreZAyU7rGtiMnvjjSFmwZZCp3QXJsEc9V6for/SNM_Cleaning_Logo.png"
         alt="SNM Cleaning LLC"
-        class="h-10 w-auto"
+        class="h-14 w-auto"
         onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
       />
       <span class="hidden text-xl font-serif italic text-primary tracking-tight">SNM Cleaning</span>
@@ -672,7 +672,7 @@
           <img
             src="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-321382/flowpublicid-qgGLY5se1ous/bb359688-172a-4a78-ad05-a237e45b4120-n1lv730BNUqTbrRofIcfrkl9ZFo0K0u1Pa8g8xzCBJp37Xrkg3ZH9FlbPEBODCreZAyU7rGtiMnvjjSFmwZZCp3QXJsEc9V6for/SNM_Cleaning_Logo.png"
             alt="SNM Cleaning LLC"
-            class="h-12 w-auto mb-6 brightness-0 invert"
+            class="h-14 w-auto mb-6 brightness-0 invert"
             onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
           />
           <span class="hidden text-2xl font-serif italic text-white mb-6 block">SNM Cleaning LLC</span>
@@ -753,24 +753,35 @@
       });
     });
 
-    // Desktop services dropdown
-    sBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const open = sMenu.style.display === 'flex';
-      sMenu.style.display = open ? 'none' : 'flex';
+    // Desktop services dropdown - hover to open
+    const sDd = document.getElementById('services-dd');
+    sDd.addEventListener('mouseenter', function () {
+      sMenu.style.display = 'flex';
       sMenu.style.flexDirection = 'column';
-      sChevron.style.transform = open ? '' : 'rotate(180deg)';
+      sChevron.style.transform = 'rotate(180deg)';
+    });
+    sDd.addEventListener('mouseleave', function () {
+      sMenu.style.display = 'none';
+      sChevron.style.transform = '';
     });
 
-    // Close on outside click
+    // Close mobile menu on outside click
     document.addEventListener('click', function (e) {
       if (!toggle.contains(e.target) && !menu.contains(e.target)) {
         menu.style.display = 'none';
         icon.textContent = 'menu';
       }
-      if (!sBtn.contains(e.target) && !sMenu.contains(e.target)) {
-        sMenu.style.display = 'none';
-        sChevron.style.transform = '';
+    });
+
+    // Scroll-aware header
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 30) {
+        hdr.classList.add('shadow-lg');
+        hdr.classList.remove('shadow-sm');
+      } else {
+        hdr.classList.remove('shadow-lg');
+        hdr.classList.add('shadow-sm');
       }
     });
   })();
